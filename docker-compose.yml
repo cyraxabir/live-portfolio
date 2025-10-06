@@ -1,0 +1,23 @@
+version: '3.8'
+services:
+  web:
+    build: .
+    image: portfolio-2:latest
+    ports:
+      - "8089:80"
+    restart: unless-stopped
+    environment:
+      - NODE_ENV=production
+
+  # optional dev service (bind-mounts source, runs vite) - uncomment to use
+  # dev:
+  #   image: node:lts
+  #   working_dir: /app
+  #   volumes:
+  #     - ./:/app
+  #     - /app/node_modules
+  #   command: sh -c "npm ci && npm run dev -- --host 0.0.0.0 --port 5173"
+  #   ports:
+  #     - "5173:5173"
+  #   environment:
+  #     - CHOKIDAR_USEPOLLING=true
