@@ -251,25 +251,25 @@ const Home = () => {
                       <span className="inline-block w-24 text-green-500">
                         Email:
                       </span>
-                      contact@devsecops.dev
+                      hafiz15-5760@diu.edu.bd
                     </p>
                     <p className="flex items-center">
                       <span className="inline-block w-24 text-green-500">
                         Location:
                       </span>
-                      San Francisco, CA
+                      HIGH-TECH Park, Rajshahi
                     </p>
                     <p className="flex items-center">
                       <span className="inline-block w-24 text-green-500">
-                        GitHub:
+                        Medium:
                       </span>
-                      github.com/devsecops
+                      https://medium.com/@nafiul.hafiz97
                     </p>
                     <p className="flex items-center">
                       <span className="inline-block w-24 text-green-500">
                         LinkedIn:
                       </span>
-                      linkedin.com/in/devsecops
+                      https://www.linkedin.com/in/md-nafiul-hafiz-146460134
                     </p>
                   </div>
                   <div className="mt-8">
