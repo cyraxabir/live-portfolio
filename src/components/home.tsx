@@ -6,7 +6,6 @@ import { Card, CardContent } from "@/components/ui/card";
 import ExperienceTimeline from "./ExperienceTimeline";
 import ProjectShowcase from "./ProjectShowcase";
 import SkillsVisualization from "./SkillsVisualization";
-import ContactForm from "./ContactForm";
 
 const Home = () => {
   return (
@@ -241,8 +240,8 @@ const Home = () => {
           </h2>
           <Card className="bg-black border border-green-500/20">
             <CardContent className="p-6">
-              <div className="flex flex-col md:flex-row gap-8">
-                <div className="md:w-1/2">
+              <div className="space-y-6">
+                <div>
                   <h3 className="text-xl font-bold mb-4 text-green-500">
                     Contact Information
                   </h3>
@@ -251,7 +250,12 @@ const Home = () => {
                       <span className="inline-block w-24 text-green-500">
                         Email:
                       </span>
-                      hafiz15-5760@diu.edu.bd
+                      <a
+                        href="mailto:hafiz15-5760@diu.edu.bd"
+                        className="text-gray-200 hover:underline"
+                      >
+                        hafiz15-5760@diu.edu.bd
+                      </a>
                     </p>
                     <p className="flex items-center">
                       <span className="inline-block w-24 text-green-500">
@@ -263,31 +267,53 @@ const Home = () => {
                       <span className="inline-block w-24 text-green-500">
                         Medium:
                       </span>
-                      https://medium.com/@nafiul.hafiz97
+                      <a
+                        href="https://medium.com/@nafiul.hafiz97"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-gray-200 hover:underline"
+                      >
+                        medium.com/@nafiul.hafiz97
+                      </a>
                     </p>
                     <p className="flex items-center">
                       <span className="inline-block w-24 text-green-500">
                         LinkedIn:
                       </span>
-                      https://www.linkedin.com/in/md-nafiul-hafiz-146460134
+                      <a
+                        href="https://www.linkedin.com/in/md-nafiul-hafiz-146460134"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-gray-200 hover:underline"
+                      >
+                        linkedin.com/in/md-nafiul-hafiz-146460134
+                      </a>
                     </p>
-                  </div>
-                  <div className="mt-8">
-                    <p className="text-gray-300 mb-4">
-                      Interested in collaborating or have a question about my
-                      work? Fill out the form and I'll get back to you as soon
-                      as possible.
-                    </p>
-                    <div className="flex items-center">
-                      <GitBranch className="h-5 w-5 text-green-500 mr-2" />
-                      <span className="text-green-500">
-                        Open to new opportunities
-                      </span>
-                    </div>
                   </div>
                 </div>
-                <div className="md:w-1/2">
-                  <ContactForm />
+
+                <div className="flex items-center justify-between">
+                  <p className="text-gray-300">
+                    Interested in collaborating or have a question about my
+                    work? Reach out via email or LinkedIn and I'll get back to
+                    you as soon as possible.
+                  </p>
+                  <div className="flex items-center gap-4">
+                    <a
+                      href="mailto:hafiz15-5760@diu.edu.bd"
+                      className="px-4 py-2 bg-green-600 hover:bg-green-700 text-white rounded-md"
+                    >
+                      Email Me
+                    </a>
+                    <a
+                      href="https://www.linkedin.com/in/md-nafiul-hafiz-146460134"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="px-4 py-2 border border-green-500 text-green-500 rounded-md hover:bg-green-500/10"
+                    >
+                      LinkedIn
+                    </a>
+                  </div>
                 </div>
               </div>
             </CardContent>
