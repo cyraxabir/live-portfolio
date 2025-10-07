@@ -44,12 +44,12 @@ const SkillsVisualization = () => {
         },
         {
           name: "Acunetix",
-          proficiency: 90,
+          proficiency: 98,
           description: "Automated vulnerability scanner",
         },
         {
           name: "Nessus",
-          proficiency: 90,
+          proficiency: 95,
           description: "Vulnerability assessment tool",
         },
         {
@@ -59,22 +59,22 @@ const SkillsVisualization = () => {
         },
         {
           name: "OWASP ZAP",
-          proficiency: 85,
+          proficiency: 90,
           description: "Web application security scanner",
         },
         {
           name: "Wazuh SIEM",
-          proficiency: 85,
+          proficiency: 90,
           description: "Security information and event management",
         },
         {
           name: "SonarQube",
-          proficiency: 80,
+          proficiency: 90,
           description: "Code quality and security analysis",
         },
         {
           name: "ELK Stack",
-          proficiency: 85,
+          proficiency: 90,
           description: "Elasticsearch, Logstash, and Kibana",
         },
         {
@@ -84,7 +84,7 @@ const SkillsVisualization = () => {
         },
         {
           name: "Prometheus",
-          proficiency: 75,
+          proficiency: 80,
           description: "Systems monitoring and alerting",
         },
       ],
@@ -95,7 +95,7 @@ const SkillsVisualization = () => {
       skills: [
         {
           name: "VAPT (Web/API/Mobile)",
-          proficiency: 95,
+          proficiency: 98,
           description: "Vulnerability Assessment & Penetration Testing",
         },
         {
@@ -120,7 +120,7 @@ const SkillsVisualization = () => {
         },
         {
           name: "WAF Configuration",
-          proficiency: 80,
+          proficiency: 90,
           description: "Web Application Firewall setup",
         },
         {
@@ -130,7 +130,7 @@ const SkillsVisualization = () => {
         },
         {
           name: "OAuth 2.0 (Keycloak)",
-          proficiency: 80,
+          proficiency: 90,
           description: "Identity and access management",
         },
       ],
@@ -151,12 +151,12 @@ const SkillsVisualization = () => {
         },
         {
           name: "Cloudflare",
-          proficiency: 85,
+          proficiency: 80,
           description: "CDN and security services",
         },
         {
           name: "Docker",
-          proficiency: 90,
+          proficiency: 98,
           description: "Container orchestration and deployment",
         },
         {
@@ -187,7 +187,7 @@ const SkillsVisualization = () => {
       skills: [
         {
           name: "MongoDB",
-          proficiency: 85,
+          proficiency: 90,
           description: "NoSQL document database",
         },
         {
@@ -197,7 +197,7 @@ const SkillsVisualization = () => {
         },
         {
           name: "MySQL",
-          proficiency: 80,
+          proficiency: 90,
           description: "Relational database management",
         },
         {
@@ -207,7 +207,7 @@ const SkillsVisualization = () => {
         },
         {
           name: "Database Security",
-          proficiency: 85,
+          proficiency: 95,
           description: "Securing database systems",
         },
       ],
@@ -254,7 +254,7 @@ const SkillsVisualization = () => {
         },
         {
           name: "AI Automation",
-          proficiency: 80,
+          proficiency: 90,
           description: "Co-pilot, n8n workflow automation",
         },
         {
