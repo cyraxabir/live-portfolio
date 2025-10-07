@@ -369,7 +369,7 @@ const defaultProjects: Project[] = [
       "Deployed and configured OWASP Dependency-Track for continuous monitoring of software supply chain vulnerabilities across multiple projects.",
     category: "security",
     image:
-      "https://images.unsplash.com/photo-1563013544-824ae1b704d3?w=800&q=80",
+      "photo-1563013544-8https://dependencytrack.org/assets/images/screenshots/dashboard-small-monitor-shadow.png",
     securityDetails:
       "The OWASP Dependency-Track implementation provided:\n\n- Software Bill of Materials (SBOM) generation\n- Continuous vulnerability monitoring\n- Policy-based risk assessment\n- Integration with vulnerability databases\n- Automated security notifications\n- License compliance tracking\n- Supply chain risk analysis\n- API security for integrations",
     cicdDetails:
@@ -393,7 +393,7 @@ const defaultProjects: Project[] = [
       "Deployed a secure, self-hosted Nextcloud instance with enterprise features, encryption, and comprehensive backup strategies.",
     category: "infrastructure",
     image:
-      "https://images.unsplash.com/photo-1544197150-b99a580bb7a8?w=800&q=80",
+      "https://nextcloud.com/c/uploads/2024/12/File_Desktop1-1.mp4",
     securityDetails:
       "The Nextcloud deployment implemented enterprise security:\n\n- End-to-end encryption for all data\n- LDAP/AD integration for user management\n- Two-factor authentication enforcement\n- Brute force protection and rate limiting\n- File access control and sharing policies\n- Audit logging and monitoring\n- SSL/TLS encryption with HSTS\n- Regular security updates and hardening",
     cicdDetails:
@@ -417,7 +417,7 @@ const defaultProjects: Project[] = [
       "Implemented n8n workflow automation platform for DevSecOps processes with secure integrations and monitoring capabilities.",
     category: "ci/cd",
     image:
-      "https://images.unsplash.com/photo-1518186285589-2f7649de83e0?w=800&q=80",
+      "https://n8niostorageaccount.blob.core.windows.net/n8nio-strapi-blobs-prod/assets/Home_ITO_Ps_5a5aac3fda.webp",
     securityDetails:
       "The n8n automation platform security included:\n\n- Encrypted credential storage\n- OAuth 2.0 integration for external services\n- Webhook security with signature validation\n- Network isolation and access controls\n- Audit logging for all workflow executions\n- Secret management integration\n- Role-based access control\n- Regular security assessments",
     cicdDetails:
