@@ -295,7 +295,7 @@ const defaultProjects: Project[] = [
       "Deployed and configured a highly available MinIO multinode cluster with comprehensive monitoring, OAuth 2.0 integration, and enterprise security features.",
     category: "infrastructure",
     image:
-      "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=800&q=80",
+      "/images/minio.png",
     securityDetails:
       "The MinIO deployment implemented enterprise-grade security:\\n\\n- OAuth 2.0 integration with OIDC providers (Keycloak, Auth0)\\n- TLS encryption for all client and server communications\\n- IAM policies with fine-grained access controls\\n- Bucket-level encryption with KMS integration\\n- Network segmentation and firewall rules\\n- Regular security audits and vulnerability assessments\\n- LDAP/AD integration for user management\\n- Multi-factor authentication enforcement",
     cicdDetails:
@@ -306,8 +306,8 @@ const defaultProjects: Project[] = [
       "OAuth 2.0",
       "Prometheus",
       "Grafana",
-      "Terraform",
-      "Ansible",
+      "Multi-node",
+      "S3 compatible",
       "TLS/SSL",
       "OIDC",
       "KMS"
@@ -320,7 +320,7 @@ const defaultProjects: Project[] = [
       "Established and operated a Security Operations Center with 24/7 monitoring, incident response, threat hunting, and comprehensive security analytics.",
     category: "security",
     image:
-      "https://images.unsplash.com/photo-1563013544-824ae1b704d3?w=800&q=80",
+      "https://thinkcloudly.com/wp-content/uploads/2024/09/Untitled-design-8.png",
     securityDetails:
       "The SOC implementation provided comprehensive security operations:\\n\\n- 24/7 security monitoring and alerting\\n- SIEM integration with multiple data sources\\n- Threat intelligence feeds and correlation\\n- Incident response playbooks and automation\\n- Threat hunting and behavioral analysis\\n- Vulnerability management and remediation\\n- Security metrics and KPI reporting\\n- Compliance monitoring and audit support",
     cicdDetails:
@@ -355,11 +355,9 @@ const defaultProjects: Project[] = [
       "Kafka Connect",
       "Debezium",
       "Schema Registry",
-      "KSQL",
-      "Prometheus",
-      "Grafana",
+      "MySQL",
       "Docker",
-      "Kubernetes"
+      "bin log"
     ],
   },
   {
@@ -369,7 +367,7 @@ const defaultProjects: Project[] = [
       "Deployed and configured OWASP Dependency-Track for continuous monitoring of software supply chain vulnerabilities across multiple projects.",
     category: "security",
     image:
-      "photo-1563013544-8https://dependencytrack.org/assets/images/screenshots/dashboard-small-monitor-shadow.png",
+      "/images/dependency-tracker.png",
     securityDetails:
       "The OWASP Dependency-Track implementation provided:\n\n- Software Bill of Materials (SBOM) generation\n- Continuous vulnerability monitoring\n- Policy-based risk assessment\n- Integration with vulnerability databases\n- Automated security notifications\n- License compliance tracking\n- Supply chain risk analysis\n- API security for integrations",
     cicdDetails:
@@ -388,12 +386,12 @@ const defaultProjects: Project[] = [
   },
   {
     id: "5",
-    title: "Nextcloud Self-Hosted Platform",
+    title: "Nextcloud Self-Hosted Private Cloud",
     description:
-      "Deployed a secure, self-hosted Nextcloud instance with enterprise features, encryption, and comprehensive backup strategies.",
+      "Deployed a secure, self-hosted Nextcloud instance with enterprise features integration, encryption, and comprehensive backup strategies.",
     category: "infrastructure",
     image:
-      "https://nextcloud.com/c/uploads/2024/12/File_Desktop1-1.mp4",
+      "/images/nc.jpg",
     securityDetails:
       "The Nextcloud deployment implemented enterprise security:\n\n- End-to-end encryption for all data\n- LDAP/AD integration for user management\n- Two-factor authentication enforcement\n- Brute force protection and rate limiting\n- File access control and sharing policies\n- Audit logging and monitoring\n- SSL/TLS encryption with HSTS\n- Regular security updates and hardening",
     cicdDetails:
@@ -417,7 +415,7 @@ const defaultProjects: Project[] = [
       "Implemented n8n workflow automation platform for DevSecOps processes with secure integrations and monitoring capabilities.",
     category: "ci/cd",
     image:
-      "https://n8niostorageaccount.blob.core.windows.net/n8nio-strapi-blobs-prod/assets/Home_ITO_Ps_5a5aac3fda.webp",
+      "/images/n8n.png",
     securityDetails:
       "The n8n automation platform security included:\n\n- Encrypted credential storage\n- OAuth 2.0 integration for external services\n- Webhook security with signature validation\n- Network isolation and access controls\n- Audit logging for all workflow executions\n- Secret management integration\n- Role-based access control\n- Regular security assessments",
     cicdDetails:
@@ -441,7 +439,7 @@ const defaultProjects: Project[] = [
       "Implemented comprehensive observability solution using OpenTelemetry for distributed tracing, metrics, and logging across microservices.",
     category: "infrastructure",
     image:
-      "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&q=80",
+      "/images/otel.png",
     securityDetails:
       "The OTEL observability implementation secured:\n\n- Encrypted telemetry data transmission\n- Authentication for all collector endpoints\n- Sensitive data filtering and redaction\n- Access controls for observability data\n- Audit trails for data access\n- Compliance with data retention policies\n- Network segmentation for telemetry traffic\n- Regular security reviews of collected data",
     cicdDetails:
@@ -465,7 +463,7 @@ const defaultProjects: Project[] = [
       "Implemented a secure Kubernetes deployment with Pod Security Policies, Network Policies, and RBAC for a financial services application.",
     category: "security",
     image:
-      "https://images.unsplash.com/photo-1667372393119-3d4c48d07fc9?w=800&q=80",
+      "/images/k8s.png",
     securityDetails:
       "This project focused on hardening a Kubernetes cluster for a financial services application. Key security implementations included:\n\n- Pod Security Policies to restrict container privileges\n- Network Policies for micro-segmentation\n- RBAC with least privilege principles\n- Secret management with HashiCorp Vault\n- Runtime security with Falco\n- Regular vulnerability scanning with Trivy",
     cicdDetails:
@@ -475,8 +473,8 @@ const defaultProjects: Project[] = [
       "RBAC",
       "Network Policies",
       "HashiCorp Vault",
-      "Falco",
-      "Trivy",
+      "Security Contexts",
+      "Observability",
       "GitLab CI",
     ],
   },
