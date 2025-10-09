@@ -254,7 +254,7 @@ const SkillsVisualization = () => {
         },
         {
           name: "AI Automation",
-          proficiency: 90,
+          proficiency: 95,
           description: "Co-pilot, n8n workflow automation",
         },
         {

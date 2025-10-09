@@ -39,19 +39,29 @@ const ExperienceTimeline = ({
       id: "1",
       title: "Associate Cybersecurity Engineer",
       organization: "Business Automation (High Tech Park, Rajshahi)",
-      startDate: "2023-01",
-      endDate: "Present",
+      startDate: "2023",
+      endDate: "2025",
       description:
         "Leading high-impact national, government and international projects security and infrastructure management. Conducting VAPT on BD Government projects including Hajj, Mutation/Land, BIDA, SDG. Managing SOC operations, threat intelligence, and collaborating with HPE team for international deployments. Maintaining high-traffic load balancers (millions/day), cloud architecture, and implementing DevSecOps practices with CI/CD pipeline management.",
       skills: [
-        "VAPT", "SOC Analysis", "Threat Intelligence", "Load Balancer Security", 
-        "Cloud Security", "DevSecOps", "CI/CD", "MLOps", "AI Integration",
+        "VAPT", "SOC Analysis", "Threat Intelligence", "Load Balancer Security", "Secure Pipeline", "AI Integration",
         "Burp Suite", "Acunetix", "Nessus", "OWASP", "Kubernetes Security"
       ],
       expanded: false,
     },
     {
       id: "2",
+      title: "Associate DevSecOps Engineer",
+      organization: "Business Automation (High Tech Park, Rajshahi)",
+      startDate: "2022-01",
+      endDate: "2022-12",
+      description:
+        "Gained hands-on experience in web application security testing and vulnerability assessment. Participated in bug bounty programs and achieved certification in Cybersecurity Ethical Hacking. Developed foundational skills in penetration testing methodologies and security tools.",
+      skills: ["Auth2.0(kekycloak)", "MLOps", "Minio S3 storage", "Sonarqube", "Cloud Security", "SBOM", "container security", "SSL/TLS", "API Security", "Security Compliance", "Deployment Automation"],
+      expanded: false,
+    },
+    {
+      id: "3",
       title: "Web Security Intern",
       organization: "Web Security",
       startDate: "2022-01",
@@ -61,17 +71,7 @@ const ExperienceTimeline = ({
       skills: ["Web Security", "Penetration Testing", "Bug Bounty", "Ethical Hacking", "OWASP Top 10"],
       expanded: false,
     },
-    {
-      id: "3",
-      title: "Data Science & Machine Learning Certification",
-      organization: "Sotyan Bose Science Club, BUET",
-      startDate: "2020-01",
-      endDate: "2020-12",
-      description:
-        "Completed comprehensive training in data science and machine learning. Worked on large datasets, trained various ML models, and completed multiple machine learning projects. Gained expertise in data engineering and model deployment practices.",
-      skills: ["Python", "Machine Learning", "Data Engineering", "Model Training", "Large Datasets"],
-      expanded: false,
-    },
+
   ],
   certifications = [
     {
@@ -84,14 +84,55 @@ const ExperienceTimeline = ({
         "Advanced certification in ethical hacking methodologies, penetration testing, and vulnerability assessment. Covers comprehensive security testing approaches for web applications, APIs, and mobile applications.",
       expanded: false,
     },
-    {
+        {
       id: "cert2",
+      title: "Introduction to DevSecOps for Managers LFS180",
+      organization: "Linux Foundation",
+      startDate: "2024",
+      endDate: "Present",
+      description:
+        "https://ti-user-certificates.s3.amazonaws.com/e0df7fbf-a057-42af-8a1f-590912be5460/ad021e27-abc9-450b-9812-ec0713c8182a-nafiul-hafiz-35c7a5d9-6e8f-4f29-901f-76fb28ad97fb-certificate.pdf",
+      expanded: false,
+    },
+    {
+      id: "cert3",
+      title: "GovStack Specification Roadmap: (Interoperability Standards) Introducing RESTful APIs",
+      organization: "Professional Certification",
+      startDate: "2022-01",
+      endDate: "Present",
+      description:
+        "Advanced certification in ethical hacking methodologies, penetration testing, and vulnerability assessment. Covers comprehensive security testing approaches for web applications, APIs, and mobile applications.",
+      expanded: false,
+    },
+    {
+      id: "cert4",
+      title: "Introduction to Zero Trust LFS183",
+      organization: "Linux Foundation",
+      startDate: "2024",
+      endDate: "Present",
+      description:
+        "https://ti-user-certificates.s3.amazonaws.com/e0df7fbf-a057-42af-8a1f-590912be5460/ad021e27-abc9-450b-9812-ec0713c8182a-nafiul-hafiz-7581fbed-927d-49ba-96f7-ce97408fd434-certificate.pdf",
+      expanded: false,
+    },
+    {
+      id: "cert5",
       title: "NASA Space App Challenge Participant",
       organization: "NASA",
       startDate: "2018-01",
       endDate: "2018-12",
       description:
         "Participated in NASA Space App Challenge 2018, working on real-life problem solving using large space data from NASA. Developed 'Wildfires Detection & Prediction' project utilizing satellite data and machine learning algorithms.",
+      expanded: false,
+    },
+    {
+      id: "cert6",
+      title: "Data Science & Machine Learning Certification",
+      organization: "Sotyan Bose Science Club, BUET",
+      startDate: "2020-01",
+      endDate: "2020-12",
+      description:
+        "Completed comprehensive training in data science and machine learning. Worked on large datasets, trained various ML models, and completed multiple machine learning projects. Gained expertise in data engineering and model deployment practices.",
+      skills: ["Python", "Machine Learning", "Data Engineering", "Model Training", "Large Datasets"],
       expanded: false,
     },
   ],
