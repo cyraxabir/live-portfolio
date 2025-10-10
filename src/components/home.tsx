@@ -74,8 +74,7 @@ const Home = () => {
               <span className="text-green-500">$</span> DevSecOps Engineer
             </h1>
             <p className="text-xl md:text-2xl text-gray-300 mb-8 max-w-3xl mx-auto">
-              Securing pipelines, automating deployments, and building resilient
-              infrastructure
+              Integrate. Automate. Secure. Repeat
             </p>
             <div className="flex justify-center">
               <Button className="bg-green-600 hover:bg-green-700 text-white">
@@ -123,7 +122,7 @@ const Home = () => {
                   I'm a DevSecOps Engineer with expertise in building secure,
                   automated CI/CD pipelines and infrastructure. With a
                   background in both development and security, I bridge the gap
-                  between rapid delivery and robust protection.
+                  between rapid delivery and defence.
                 </p>
                 <p>
                   My approach integrates security at every stage of the
@@ -133,9 +132,8 @@ const Home = () => {
                 </p>
                 <p>
                   When I'm not securing pipelines, you'll find me contributing
-                  to open source security tools, participating in CTF
-                  competitions, and staying current with the latest in cloud
-                  security practices.
+                  to open source security tools, participating in Penetrate 
+                  and staying current with the latest AI driven Security practice.
                 </p>
               </div>
               <div className="mt-8 flex gap-4">
@@ -193,6 +191,10 @@ const Home = () => {
                   </p>
                   <p className="text-white">
                     Ready for new challenges and opportunities
+                  </p>
+                  <p className="mb-2">$ systemctl start dev-sec-ops-united.service </p>
+                  <p className="text-white mb-4">
+                    Automation with armor
                   </p>
                 </div>
               </div>

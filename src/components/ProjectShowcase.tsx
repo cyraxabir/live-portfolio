@@ -290,6 +290,76 @@ jobs:
 const defaultProjects: Project[] = [
   {
     id: "1",
+    title: "Vulnerability Assessment & Penetration Testing",
+    description:
+      "Performed comprehensive vulnerability assessments and penetration testing across cloud and on-premise environments to identify, exploit, and mitigate security risks in critical infrastructure and applications.",
+    category: "security",
+    image:
+      "/images/vapt.jpg",
+    securityDetails:
+      "The VAPT engagement covered both network and application security with enterprise-level depth:\n\n- Reconnaissance and asset discovery using Nmap, Shodan, and custom scripts\n- Web application testing for OWASP Top 10 vulnerabilities\n- Internal and external network penetration testing\n- Exploitation of misconfigurations, weak access controls, and unpatched CVEs\n- Privilege escalation and lateral movement simulation\n- Cloud security review (IAM misconfigurations, S3/MinIO bucket exposure)\n- Vulnerability validation and manual verification of automated scan results\n- Detailed remediation guidance and post-fix revalidation",
+    cicdDetails:
+      "Integrated VAPT processes within the DevSecOps pipeline for continuous security assurance:\n\n- Automated vulnerability scanning with tools like OWASP ZAP and Trivy\n- Continuous monitoring through CI/CD workflows (GitLab CI, Jenkins)\n- Security gates integrated before production deployments\n- Infrastructure as Code scanning (Terraform, Ansible) for misconfigurations\n- Regular penetration tests aligned with SDLC phases\n- Integration of security reports into dashboards (Grafana, ELK Stack)\n- Compliance mapping with ISO 27001 and NIST standards\n- Periodic red-teaming simulations and incident response drills",
+    technologies: [
+      "Burp Suit",
+      "Nmap",
+      "Metasploit",
+      "Kali linux",
+      "Wireshark",
+      "nslookup",
+      "exploits",
+      "TLS/SSL",
+      "Information Gathering",
+      "Security misconfigurations"
+    ],
+  },
+  {
+    id: "2",
+    title: "SOC Analyst Security Operations",
+    description:
+      "Established and operated a Security Operations Center with 24/7 monitoring, incident response, threat hunting, and comprehensive security analytics.",
+    category: "security",
+    image:
+      "https://thinkcloudly.com/wp-content/uploads/2024/09/Untitled-design-8.png",
+    securityDetails:
+      "The SOC implementation provided comprehensive security operations:\\n\\n- 24/7 security monitoring and alerting\\n- SIEM integration with multiple data sources\\n- Threat intelligence feeds and correlation\\n- Incident response playbooks and automation\\n- Threat hunting and behavioral analysis\\n- Vulnerability management and remediation\\n- Security metrics and KPI reporting\\n- Compliance monitoring and audit support",
+    cicdDetails:
+      "The SOC automation and tooling included:\\n\\n- SOAR platform for incident orchestration\\n- Automated threat detection and response\\n- Security tool integration and API automation\\n- Custom dashboard and reporting automation\\n- Incident ticketing and workflow management\\n- Threat intelligence platform integration\\n- Security awareness training automation\\n- Compliance reporting and evidence collection",
+    technologies: [
+      "Wazuh",
+      "Splunk",
+      "QRadar",
+      "Phantom SOAR",
+      "MISP",
+      "TheHive",
+    ],
+  },
+  {
+    id: "3",
+    title: "OWASP Dependency Tracker",
+    description:
+      "Deployed and configured OWASP Dependency-Track for continuous monitoring of software supply chain vulnerabilities across multiple projects.",
+    category: "security",
+    image:
+      "/images/dependency-tracker.png",
+    securityDetails:
+      "The OWASP Dependency-Track implementation provided:\n\n- Software Bill of Materials (SBOM) generation\n- Continuous vulnerability monitoring\n- Policy-based risk assessment\n- Integration with vulnerability databases\n- Automated security notifications\n- License compliance tracking\n- Supply chain risk analysis\n- API security for integrations",
+    cicdDetails:
+      "The CI/CD integration included:\n\n- Automated SBOM generation in build pipelines\n- Vulnerability scanning on every commit\n- Policy gates for deployment approval\n- Integration with existing CI/CD tools\n- Automated reporting and dashboards\n- Webhook notifications for critical vulnerabilities\n- Compliance reporting automation\n- Historical trend analysis",
+    technologies: [
+      "OWASP Dependency-Track",
+      "CycloneDX",
+      "SPDX",
+      "Jenkins",
+      "GitLab CI",
+      "Docker",
+      "PostgreSQL",
+      "REST API",
+      "LDAP"
+    ],
+  },
+    {
+    id: "4",
     title: "MinIO Multinode Object Storage",
     description:
       "Deployed and configured a highly available MinIO multinode cluster with comprehensive monitoring, OAuth 2.0 integration, and enterprise security features.",
@@ -314,32 +384,7 @@ const defaultProjects: Project[] = [
     ],
   },
   {
-    id: "2",
-    title: "SOC Analyst Security Operations",
-    description:
-      "Established and operated a Security Operations Center with 24/7 monitoring, incident response, threat hunting, and comprehensive security analytics.",
-    category: "security",
-    image:
-      "https://thinkcloudly.com/wp-content/uploads/2024/09/Untitled-design-8.png",
-    securityDetails:
-      "The SOC implementation provided comprehensive security operations:\\n\\n- 24/7 security monitoring and alerting\\n- SIEM integration with multiple data sources\\n- Threat intelligence feeds and correlation\\n- Incident response playbooks and automation\\n- Threat hunting and behavioral analysis\\n- Vulnerability management and remediation\\n- Security metrics and KPI reporting\\n- Compliance monitoring and audit support",
-    cicdDetails:
-      "The SOC automation and tooling included:\\n\\n- SOAR platform for incident orchestration\\n- Automated threat detection and response\\n- Security tool integration and API automation\\n- Custom dashboard and reporting automation\\n- Incident ticketing and workflow management\\n- Threat intelligence platform integration\\n- Security awareness training automation\\n- Compliance reporting and evidence collection",
-    technologies: [
-      "Splunk",
-      "QRadar",
-      "Phantom SOAR",
-      "MISP",
-      "TheHive",
-      "Cortex",
-      "ELK Stack",
-      "YARA",
-      "Suricata",
-      "MITRE ATT&CK"
-    ],
-  },
-  {
-    id: "3",
+    id: "5",
     title: "Kafka CDC Data Pipeline",
     description:
       "Implemented a real-time Change Data Capture (CDC) pipeline using Apache Kafka for streaming database changes with security controls and monitoring.",
@@ -361,31 +406,7 @@ const defaultProjects: Project[] = [
     ],
   },
   {
-    id: "4",
-    title: "OWASP Dependency Tracker",
-    description:
-      "Deployed and configured OWASP Dependency-Track for continuous monitoring of software supply chain vulnerabilities across multiple projects.",
-    category: "security",
-    image:
-      "/images/dependency-tracker.png",
-    securityDetails:
-      "The OWASP Dependency-Track implementation provided:\n\n- Software Bill of Materials (SBOM) generation\n- Continuous vulnerability monitoring\n- Policy-based risk assessment\n- Integration with vulnerability databases\n- Automated security notifications\n- License compliance tracking\n- Supply chain risk analysis\n- API security for integrations",
-    cicdDetails:
-      "The CI/CD integration included:\n\n- Automated SBOM generation in build pipelines\n- Vulnerability scanning on every commit\n- Policy gates for deployment approval\n- Integration with existing CI/CD tools\n- Automated reporting and dashboards\n- Webhook notifications for critical vulnerabilities\n- Compliance reporting automation\n- Historical trend analysis",
-    technologies: [
-      "OWASP Dependency-Track",
-      "CycloneDX",
-      "SPDX",
-      "Jenkins",
-      "GitLab CI",
-      "Docker",
-      "PostgreSQL",
-      "REST API",
-      "LDAP"
-    ],
-  },
-  {
-    id: "5",
+    id: "6",
     title: "Nextcloud Self-Hosted Private Cloud",
     description:
       "Deployed a secure, self-hosted Nextcloud instance with enterprise features integration, encryption, and comprehensive backup strategies.",
@@ -399,17 +420,17 @@ const defaultProjects: Project[] = [
     technologies: [
       "Nextcloud",
       "PHP",
-      "MySQL",
+      "PgSQL",
       "Redis",
       "Apache/Nginx",
       "Let's Encrypt",
-      "Ansible",
+      "AI",
       "Docker",
       "LDAP"
     ],
   },
   {
-    id: "6",
+    id: "7",
     title: "n8n Workflow Automation",
     description:
       "Implemented n8n workflow automation platform for DevSecOps processes with secure integrations and monitoring capabilities.",
@@ -433,7 +454,7 @@ const defaultProjects: Project[] = [
     ],
   },
   {
-    id: "7",
+    id: "8",
     title: "OpenTelemetry Observability",
     description:
       "Implemented comprehensive observability solution using OpenTelemetry for distributed tracing, metrics, and logging across microservices.",
@@ -457,7 +478,7 @@ const defaultProjects: Project[] = [
     ],
   },
   {
-    id: "8",
+    id: "9",
     title: "Secure Kubernetes Deployment",
     description:
       "Implemented a secure Kubernetes deployment with Pod Security Policies, Network Policies, and RBAC for a financial services application.",
@@ -479,7 +500,7 @@ const defaultProjects: Project[] = [
     ],
   },
   {
-    id: "9",
+    id: "10",
     title: "Zero-Trust Pipeline Architecture",
     description:
       "Designed and implemented a zero-trust CI/CD pipeline with comprehensive security controls and verification at each stage.",
