@@ -173,7 +173,7 @@ const Home = () => {
 
                   <p className="mb-2">$ cat skills.txt</p>
                   <p className="text-white mb-4">
-                    Kubernetes | Docker | AWS | infrastructure | CI/CD | SOC |
+                    VAPT | SOC | Kubernetes | Docker | AWS | infrastructure | CI/CD |
                     Security Automation
                   </p>
 

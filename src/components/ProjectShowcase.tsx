@@ -506,7 +506,7 @@ const defaultProjects: Project[] = [
       "Designed and implemented a zero-trust CI/CD pipeline with comprehensive security controls and verification at each stage.",
     category: "ci/cd",
     image:
-      "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=800&q=80",
+      "https://www.brickworkindia.com/AdminFiles/What-is-Zero-Trust-Architecture-_1.jpg",
     securityDetails:
       "The zero-trust pipeline architecture implemented:\n\n- Multi-factor authentication for all pipeline access\n- Signed commits and verification\n- Ephemeral build environments\n- Artifact provenance and attestation\n- Least privilege access controls\n- Comprehensive audit logging",
     cicdDetails:
