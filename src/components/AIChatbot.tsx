@@ -47,7 +47,7 @@ const AIChatbot = () => {
       return "You can reach Nafiul at hafiz15-5760@diu.edu.bd or fill out the contact form at the bottom of the page. He's open to new opportunities!";
     } else if (lowerMessage.includes("location") || lowerMessage.includes("where")) {
       return "Nafiul is based in HIGH-TECH Park, Rajshahi and is open to remote opportunities.";
-    } else if (lowerMessage.includes("hello") || lowerMessage.includes("hi")) {
+    } else if (lowerMessage.includes("hello") || lowerMessage.includes("hi") || lowerMessage.includes("hlw")) {
       return "Hello! How can I help you learn more about Nafiul's DevSecOps expertise?";
     } else if (lowerMessage.includes("hobby") || lowerMessage.includes("hobbies")) {
       return "He loves football, badminton, and gaming. He’s always up for new adventures and enjoys travelling to explore different cultures and experiences!";
@@ -62,7 +62,7 @@ const AIChatbot = () => {
     } else if (lowerMessage.includes("cert") || lowerMessage.includes("qualification")) {
       return "Nafiul holds certifications in Cybersecurity Ethical Hacking and has completed Data Science & ML certification at BUET (2020). He's also a NASA Space App Challenge participant and has extensive hands-on experience in DevSecOps and security operations.";
     } else {
-      return "That's a great question! For more detailed information, feel free to explore the different sections of the portfolio or reach out via the contact form.";
+      return "That's a great! For more detailed information, feel free to explore the different sections of the portfolio or reach out via the contact form.";
     }
   };
 
