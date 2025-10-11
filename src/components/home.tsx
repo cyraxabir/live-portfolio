@@ -6,6 +6,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import ExperienceTimeline from "./ExperienceTimeline";
 import ProjectShowcase from "./ProjectShowcase";
 import SkillsVisualization from "./SkillsVisualization";
+import AIChatbot from "./AIChatbot";
 
 const Home = () => {
   return (
@@ -392,6 +393,8 @@ const Home = () => {
           </div>
         </div>
       </footer>
+      {/* AI Chatbot */}
+      <AIChatbot />
     </div>
   );
 };
