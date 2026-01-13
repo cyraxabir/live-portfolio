@@ -296,10 +296,6 @@ const defaultProjects: Project[] = [
     category: "security",
     image:
       "/images/vapt.jpg",
-    securityDetails:
-      "The VAPT engagement covered both network and application security with enterprise-level depth:\n\n- Reconnaissance and asset discovery using Nmap, Shodan, and custom scripts\n- Web application testing for OWASP Top 10 vulnerabilities\n- Internal and external network penetration testing\n- Exploitation of misconfigurations, weak access controls, and unpatched CVEs\n- Privilege escalation and lateral movement simulation\n- Cloud security review (IAM misconfigurations, S3/MinIO bucket exposure)\n- Vulnerability validation and manual verification of automated scan results\n- Detailed remediation guidance and post-fix revalidation",
-    cicdDetails:
-      "Integrated VAPT processes within the DevSecOps pipeline for continuous security assurance:\n\n- Automated vulnerability scanning with tools like OWASP ZAP and Trivy\n- Continuous monitoring through CI/CD workflows (GitLab CI, Jenkins)\n- Security gates integrated before production deployments\n- Infrastructure as Code scanning (Terraform, Ansible) for misconfigurations\n- Regular penetration tests aligned with SDLC phases\n- Integration of security reports into dashboards (Grafana, ELK Stack)\n- Compliance mapping with ISO 27001 and NIST standards\n- Periodic red-teaming simulations and incident response drills",
     technologies: [
       "Burp Suit",
       "Nmap",
@@ -321,11 +317,7 @@ const defaultProjects: Project[] = [
     category: "security",
     image:
       "https://thinkcloudly.com/wp-content/uploads/2024/09/Untitled-design-8.png",
-    securityDetails:
-      "The SOC implementation provided comprehensive security operations:\\n\\n- 24/7 security monitoring and alerting\\n- SIEM integration with multiple data sources\\n- Threat intelligence feeds and correlation\\n- Incident response playbooks and automation\\n- Threat hunting and behavioral analysis\\n- Vulnerability management and remediation\\n- Security metrics and KPI reporting\\n- Compliance monitoring and audit support",
-    cicdDetails:
-      "The SOC automation and tooling included:\\n\\n- SOAR platform for incident orchestration\\n- Automated threat detection and response\\n- Security tool integration and API automation\\n- Custom dashboard and reporting automation\\n- Incident ticketing and workflow management\\n- Threat intelligence platform integration\\n- Security awareness training automation\\n- Compliance reporting and evidence collection",
-    technologies: [
+     technologies: [
       "Wazuh",
       "Splunk",
       "QRadar",
@@ -358,7 +350,7 @@ const defaultProjects: Project[] = [
       "LDAP"
     ],
   },
-    {
+  {
     id: "4",
     title: "MinIO Multinode Object Storage",
     description:
@@ -368,8 +360,6 @@ const defaultProjects: Project[] = [
       "/images/minio.png",
     securityDetails:
       "The MinIO deployment implemented enterprise-grade security:\\n\\n- OAuth 2.0 integration with OIDC providers (Keycloak, Auth0)\\n- TLS encryption for all client and server communications\\n- IAM policies with fine-grained access controls\\n- Bucket-level encryption with KMS integration\\n- Network segmentation and firewall rules\\n- Regular security audits and vulnerability assessments\\n- LDAP/AD integration for user management\\n- Multi-factor authentication enforcement",
-    cicdDetails:
-      "The deployment pipeline automated the entire infrastructure:\\n\\n- Infrastructure as Code with Terraform/Ansible\\n- Automated cluster provisioning and configuration\\n- Health checks and monitoring setup\\n- Backup and disaster recovery automation\\n- Performance benchmarking and optimization\\n- Automated certificate management and renewal\\n- Configuration drift detection and remediation\\n- Blue-green deployment strategies for updates",
     technologies: [
       "MinIO",
       "Kubernetes",
@@ -380,11 +370,33 @@ const defaultProjects: Project[] = [
       "S3 compatible",
       "TLS/SSL",
       "OIDC",
-      "KMS"
+      "Encryption"
     ],
   },
   {
     id: "5",
+    title: "Auth2.0, Keycloak-SSO",
+    description:
+      "Deployed and configured a highly available MinIO multinode cluster with comprehensive monitoring, OAuth 2.0 integration, and enterprise security features.",
+    category: "infrastructure",
+    image:
+      "/images/keycloak.png",
+    securityDetails:
+      "The MinIO deployment implemented enterprise-grade security:\\n\\n- OAuth 2.0 integration with OIDC providers (Keycloak, Auth0)\\n- TLS encryption for all client and server communications\\n- IAM policies with fine-grained access controls\\n- Bucket-level encryption with KMS integration\\n- Network segmentation and firewall rules\\n- Regular security audits and vulnerability assessments\\n- LDAP/AD integration for user management\\n- Multi-factor authentication enforcement",
+    cicdDetails:
+      "The deployment pipeline automated the entire infrastructure:\\n\\n- Infrastructure as Code with Terraform/Ansible\\n- Automated cluster provisioning and configuration\\n- Health checks and monitoring setup\\n- Backup and disaster recovery automation\\n- Performance benchmarking and optimization\\n- Automated certificate management and renewal\\n- Configuration drift detection and remediation\\n- Blue-green deployment strategies for updates",
+    technologies: [
+      "MinIO",
+      "Kubernetes",
+      "OAuth 2.0",
+      "S3 compatible",
+      "TLS/SSL",
+      "OIDC",
+      "KMS"
+    ],
+  },
+  {
+    id: "6",
     title: "Kafka CDC Data Pipeline",
     description:
       "Implemented a real-time Change Data Capture (CDC) pipeline using Apache Kafka for streaming database changes with security controls and monitoring.",
@@ -406,7 +418,7 @@ const defaultProjects: Project[] = [
     ],
   },
   {
-    id: "6",
+    id: "7",
     title: "Nextcloud Self-Hosted Private Cloud",
     description:
       "Deployed a secure, self-hosted Nextcloud instance with enterprise features integration, encryption, and comprehensive backup strategies.",
@@ -430,7 +442,7 @@ const defaultProjects: Project[] = [
     ],
   },
   {
-    id: "7",
+    id: "8",
     title: "n8n Workflow Automation",
     description:
       "Implemented n8n workflow automation platform for DevSecOps processes with secure integrations and monitoring capabilities.",
@@ -454,7 +466,7 @@ const defaultProjects: Project[] = [
     ],
   },
   {
-    id: "8",
+    id: "9",
     title: "OpenTelemetry Observability",
     description:
       "Implemented comprehensive observability solution using OpenTelemetry for distributed tracing, metrics, and logging across microservices.",
@@ -478,7 +490,7 @@ const defaultProjects: Project[] = [
     ],
   },
   {
-    id: "9",
+    id: "10",
     title: "Secure Kubernetes Deployment",
     description:
       "Implemented a secure Kubernetes deployment with Pod Security Policies, Network Policies, and RBAC for a financial services application.",
@@ -500,7 +512,7 @@ const defaultProjects: Project[] = [
     ],
   },
   {
-    id: "10",
+    id: "11",
     title: "Zero-Trust Pipeline Architecture",
     description:
       "Designed and implemented a zero-trust CI/CD pipeline with comprehensive security controls and verification at each stage.",
@@ -521,7 +533,7 @@ const defaultProjects: Project[] = [
     ],
   },
   {
-    id: "10",
+    id: "12",
     title: "Infrastructure as Code Security",
     description:
       "Developed a secure Infrastructure as Code framework with automated security scanning, policy enforcement, and compliance validation.",
@@ -543,11 +555,11 @@ const defaultProjects: Project[] = [
     ],
   },
   {
-    id: "11",
+    id: "13",
     title: "Container Security Platform",
     description:
       "Built a comprehensive container security platform with vulnerability scanning, runtime protection, and compliance enforcement.",
-    category: "security",
+    category: "Infrastructure",
     image:
       "https://images.unsplash.com/photo-1605745341112-85968b19335b?w=800&q=80",
     securityDetails:
@@ -565,7 +577,7 @@ const defaultProjects: Project[] = [
     ],
   },
   {
-    id: "12",
+    id: "14",
     title: "Automated Compliance Pipeline",
     description:
       "Created an automated compliance pipeline that continuously validates infrastructure and applications against regulatory requirements.",
@@ -586,7 +598,7 @@ const defaultProjects: Project[] = [
     ],
   },
   {
-    id: "13",
+    id: "15",
     title: "Cloud Security Posture Management",
     description:
       "Implemented a comprehensive cloud security posture management solution with real-time monitoring, automated remediation, and compliance reporting.",
@@ -606,6 +618,34 @@ const defaultProjects: Project[] = [
       "Pulumi",
     ],
   },
+{
+  id: "16",
+  title: "AI Self-Hosted Model Deployment Platform",
+  description:
+    "Designed and deployed a secure, scalable platform for hosting self-trained AI/ML models with controlled access, high availability, and full observability.",
+  category: "ai-infrastructure",
+  image:
+    "/images/ai-host.png",
+
+  platformSecurity:
+    "The platform enforces strong security and access control for AI model hosting:\\n\\n- OAuth 2.0 / OpenID Connect authentication using Keycloak\\n- Role-based and token-based authorization for model inference APIs\\n- TLS encryption for all external and internal communications\\n- Secure storage of model artifacts and datasets with policy-based access control\\n- Kubernetes namespace isolation and network policies\\n- Centralized secrets management for credentials and API tokens\\n- Audit logging for model access and inference requests",
+
+  deploymentAndMLOps:
+    "The system automates the full lifecycle of self-hosted AI models:\\n\\n- Containerization and versioning of self-trained models\\n- CI/CD pipelines for automated build, test, and deployment\\n- Kubernetes-based deployment with health checks and autoscaling\\n- Rolling and blue-green deployments for zero-downtime updates\\n- Automated rollback on failed inference or degraded performance\\n- Monitoring of latency, throughput, and resource utilization\\n- Model artifact management using object storage",
+
+  technologies: [
+    "Kubernetes",
+    "Docker",
+    "Keycloak",
+    "OAuth 2.0 / OIDC",
+    "MinIO",
+    "Prometheus",
+    "Grafana",
+    "TLS/SSL",
+    "Inference APIs",
+    "MLOps"
+  ],
+},
 ];
 
 export default ProjectShowcase;

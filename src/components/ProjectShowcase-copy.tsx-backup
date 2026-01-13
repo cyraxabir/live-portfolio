@@ -1,0 +1,597 @@
+import React, { useState } from "react";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardFooter,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import { Badge } from "@/components/ui/badge";
+import { Button } from "@/components/ui/button";
+import {
+  Dialog,
+  DialogContent,
+  DialogDescription,
+  DialogHeader,
+  DialogTitle,
+  DialogTrigger,
+} from "@/components/ui/dialog";
+import { Code, GitBranch, Lock, Server, Terminal } from "lucide-react";
+
+interface Project {
+  id: string;
+  title: string;
+  description: string;
+  category: string;
+  image: string;
+  securityDetails: string;
+  cicdDetails: string;
+  technologies: string[];
+}
+
+const ProjectShowcase = ({
+  projects = defaultProjects,
+}: {
+  projects?: Project[];
+}) => {
+  const [filter, setFilter] = useState<string>("all");
+  const [selectedProject, setSelectedProject] = useState<Project | null>(null);
+  const [dialogOpen, setDialogOpen] = useState(false);
+
+  const categories = ["all", "security", "ci/cd", "infrastructure"];
+
+  const filteredProjects =
+    filter === "all"
+      ? projects
+      : projects.filter((project) => project.category === filter);
+
+  const handleProjectClick = (project: Project) => {
+    setSelectedProject(project);
+    setDialogOpen(true);
+  };
+
+  return (
+    <div className="w-full py-12 bg-background">
+      <div className="container mx-auto px-4">
+        <div className="flex flex-col items-center mb-12">
+          <h2 className="text-3xl font-bold mb-4 text-foreground">Projects</h2>
+          <p className="text-muted-foreground text-center max-w-2xl mb-8">
+            Explore my DevSecOps projects showcasing security implementations
+            and CI/CD pipelines
+          </p>
+
+          <div className="flex flex-wrap gap-2 justify-center mb-8">
+            {categories.map((category) => (
+              <Button
+                key={category}
+                variant={filter === category ? "default" : "outline"}
+                onClick={() => setFilter(category)}
+                className="capitalize"
+              >
+                {category === "all" ? "All Projects" : category}
+              </Button>
+            ))}
+          </div>
+        </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {filteredProjects.map((project) => (
+            <Card
+              key={project.id}
+              className="overflow-hidden hover:shadow-lg transition-shadow cursor-pointer bg-card border-border"
+              onClick={() => handleProjectClick(project)}
+            >
+              <div className="h-48 overflow-hidden">
+                <img
+                  src={project.image}
+                  alt={project.title}
+                  className="w-full h-full object-cover"
+                />
+              </div>
+              <CardHeader>
+                <div className="flex justify-between items-start">
+                  <CardTitle className="text-xl">{project.title}</CardTitle>
+                  <Badge variant="outline" className="capitalize">
+                    {project.category}
+                  </Badge>
+                </div>
+                <CardDescription className="line-clamp-2">
+                  {project.description}
+                </CardDescription>
+              </CardHeader>
+              <CardFooter className="flex flex-wrap gap-2">
+                {project.technologies.slice(0, 3).map((tech, index) => (
+                  <Badge key={index} variant="secondary" className="text-xs">
+                    {tech}
+                  </Badge>
+                ))}
+                {project.technologies.length > 3 && (
+                  <Badge variant="secondary" className="text-xs">
+                    +{project.technologies.length - 3}
+                  </Badge>
+                )}
+              </CardFooter>
+            </Card>
+          ))}
+        </div>
+
+        {filteredProjects.length === 0 && (
+          <div className="text-center py-12">
+            <p className="text-muted-foreground">
+              No projects found in this category.
+            </p>
+          </div>
+        )}
+
+        <Dialog open={dialogOpen} onOpenChange={setDialogOpen}>
+          {selectedProject && (
+            <DialogContent className="max-w-3xl max-h-[90vh] overflow-y-auto">
+              <DialogHeader>
+                <div className="flex items-center justify-between">
+                  <DialogTitle className="text-2xl">
+                    {selectedProject.title}
+                  </DialogTitle>
+                  <Badge variant="outline" className="capitalize">
+                    {selectedProject.category}
+                  </Badge>
+                </div>
+                <DialogDescription>
+                  {selectedProject.description}
+                </DialogDescription>
+              </DialogHeader>
+
+              <div className="mt-6">
+                <img
+                  src={selectedProject.image}
+                  alt={selectedProject.title}
+                  className="w-full h-64 object-cover rounded-md mb-6"
+                />
+
+                <div className="flex flex-wrap gap-2 mb-6">
+                  {selectedProject.technologies.map((tech, index) => (
+                    <Badge key={index} variant="secondary">
+                      {tech}
+                    </Badge>
+                  ))}
+                </div>
+
+                <Tabs defaultValue="security" className="w-full">
+                  <TabsList className="grid w-full grid-cols-2">
+                    <TabsTrigger
+                      value="security"
+                      className="flex items-center gap-2"
+                    >
+                      <Lock className="h-4 w-4" />
+                      Security Implementation
+                    </TabsTrigger>
+                    <TabsTrigger
+                      value="cicd"
+                      className="flex items-center gap-2"
+                    >
+                      <GitBranch className="h-4 w-4" />
+                      CI/CD Pipeline
+                    </TabsTrigger>
+                  </TabsList>
+                  <TabsContent value="security" className="mt-4">
+                    <Card>
+                      <CardHeader>
+                        <CardTitle className="flex items-center gap-2">
+                          <Lock className="h-5 w-5" />
+                          Security Details
+                        </CardTitle>
+                      </CardHeader>
+                      <CardContent>
+                        <div className="prose dark:prose-invert max-w-none">
+                          <div className="bg-muted p-4 rounded-md mb-4 flex items-start">
+                            <Terminal className="h-5 w-5 mr-2 mt-1 flex-shrink-0" />
+                            <div>
+                              <p className="font-mono text-sm whitespace-pre-wrap">
+                                {selectedProject.securityDetails}
+                              </p>
+                            </div>
+                          </div>
+
+                          <div className="bg-muted p-4 rounded-md">
+                            <h4 className="text-sm font-semibold mb-2 flex items-center">
+                              <Code className="h-4 w-4 mr-2" />
+                              Security Implementation Code Snippet
+                            </h4>
+                            <pre className="bg-black text-green-400 p-4 rounded-md overflow-x-auto text-xs">
+                              <code>{`# Example security configuration
+rules:
+  - id: secure-headers
+    enabled: true
+    config:
+      X-Frame-Options: DENY
+      X-XSS-Protection: 1; mode=block
+      Content-Security-Policy: default-src 'self'
+
+# Authentication middleware
+auth:
+  required: true
+  methods:
+    - jwt
+    - oauth2`}</code>
+                            </pre>
+                          </div>
+                        </div>
+                      </CardContent>
+                    </Card>
+                  </TabsContent>
+                  <TabsContent value="cicd" className="mt-4">
+                    <Card>
+                      <CardHeader>
+                        <CardTitle className="flex items-center gap-2">
+                          <GitBranch className="h-5 w-5" />
+                          CI/CD Pipeline Details
+                        </CardTitle>
+                      </CardHeader>
+                      <CardContent>
+                        <div className="prose dark:prose-invert max-w-none">
+                          <div className="bg-muted p-4 rounded-md mb-4 flex items-start">
+                            <Server className="h-5 w-5 mr-2 mt-1 flex-shrink-0" />
+                            <div>
+                              <p className="font-mono text-sm whitespace-pre-wrap">
+                                {selectedProject.cicdDetails}
+                              </p>
+                            </div>
+                          </div>
+
+                          <div className="bg-muted p-4 rounded-md">
+                            <h4 className="text-sm font-semibold mb-2 flex items-center">
+                              <Code className="h-4 w-4 mr-2" />
+                              CI/CD Pipeline Configuration
+                            </h4>
+                            <pre className="bg-black text-green-400 p-4 rounded-md overflow-x-auto text-xs">
+                              <code>{`name: DevSecOps Pipeline
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  security-scan:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Run SAST
+        run: |
+          docker run --rm -v \$(pwd):/src owasp/sonarqube
+          
+  build-and-deploy:
+    needs: security-scan
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Build and push Docker image
+        run: |
+          docker build -t myapp:latest .
+          docker push myapp:latest`}</code>
+                            </pre>
+                          </div>
+                        </div>
+                      </CardContent>
+                    </Card>
+                  </TabsContent>
+                </Tabs>
+              </div>
+            </DialogContent>
+          )}
+        </Dialog>
+      </div>
+    </div>
+  );
+};
+
+const defaultProjects: Project[] = [
+  {
+    id: "1",
+    title: "AI Model Security & Threat Assessment",
+    description:
+      "Conducted security assessments on self-hosted AI model platforms, identifying risks in inference APIs, data pipelines, and model access layers.",
+    category: "security",
+    image: "/images/vapt.jpg",
+    technologies: [
+      "API Security",
+      "Threat Modeling",
+      "Inference Endpoint Testing",
+      "TLS/SSL",
+      "Auth Testing",
+      "Attack Simulation",
+      "Security Misconfigurations",
+      "Network Scanning",
+      "Information Gathering",
+    ],
+  },
+  {
+    id: "2",
+    title: "AI SOC & Security Monitoring Operations",
+    description:
+      "Built and operated a security monitoring workflow focused on AI platforms, inference services, and data pipelines with real-time alerting and response.",
+    category: "security",
+    image:
+      "https://thinkcloudly.com/wp-content/uploads/2024/09/Untitled-design-8.png",
+    technologies: [
+      "Security Monitoring",
+      "Threat Detection",
+      "Alert Correlation",
+      "Log Analysis",
+      "Incident Response",
+      "SIEM",
+    ],
+  },
+  {
+    id: "3",
+    title: "AI Dependency & Model Artifact Risk Tracking",
+    description:
+      "Implemented continuous monitoring for AI model dependencies, libraries, and artifacts to detect vulnerable components across ML pipelines.",
+    category: "security",
+    image: "/images/dependency-tracker.png",
+    securityDetails:
+      "This project focused on securing AI model dependencies:\\n\\n- Tracking vulnerable ML libraries and runtimes\\n- Monitoring third-party AI frameworks\\n- Policy-based risk assessment for model builds\\n- License and compliance validation\\n- Alerting for critical dependency risks",
+    cicdDetails:
+      "The CI/CD workflow included:\\n\\n- Dependency scanning during model builds\\n- Automated risk checks before deployment\\n- Policy gates for production rollout\\n- Reporting dashboards for AI risks\\n- Historical vulnerability trend analysis",
+    technologies: [
+      "Dependency Tracking",
+      "SBOM",
+      "CI/CD",
+      "Docker",
+      "ML Frameworks",
+      "REST API",
+    ],
+  },
+  {
+    id: "4",
+    title: "AI Model Artifact Storage Platform",
+    description:
+      "Designed a highly available object storage platform for AI model artifacts, datasets, and inference assets with enterprise-grade security.",
+    category: "infrastructure",
+    image: "/images/minio.png",
+    securityDetails:
+      "The AI artifact storage platform implemented:\\n\\n- Secure access control for model artifacts\\n- TLS encryption for all storage traffic\\n- Fine-grained access policies\\n- Encrypted model and dataset storage\\n- Audit logging for artifact access\\n- Identity-based access using OIDC",
+    cicdDetails:
+      "The deployment automation included:\\n\\n- Automated provisioning of storage clusters\\n- Policy enforcement during model uploads\\n- Backup and disaster recovery workflows\\n- Health monitoring and alerting\\n- Zero-downtime storage updates",
+    technologies: [
+      "Object Storage",
+      "S3 Compatible",
+      "Kubernetes",
+      "OIDC",
+      "Encryption",
+      "Monitoring",
+    ],
+  },
+  {
+    id: "5",
+    title: "AI Platform Authentication & SSO",
+    description:
+      "Implemented centralized authentication and authorization for AI platforms, inference APIs, and internal tools using modern identity standards.",
+    category: "infrastructure",
+    image: "/images/keycloak.png",
+    securityDetails:
+      "The AI authentication layer provided:\\n\\n- OAuth 2.0 / OpenID Connect authentication\\n- Role-based access for AI services\\n- Token-based inference authorization\\n- MFA enforcement for administrative access\\n- Identity federation support",
+    cicdDetails:
+      "The identity platform deployment included:\\n\\n- Automated realm and client provisioning\\n- Secure secret distribution\\n- Configuration drift detection\\n- Blue-green upgrades for identity services",
+    technologies: [
+      "OAuth 2.0",
+      "OIDC",
+      "SSO",
+      "RBAC",
+      "TLS/SSL",
+    ],
+  },
+  {
+    id: "6",
+    title: "Real-Time AI Data Streaming Pipeline",
+    description:
+      "Implemented a secure real-time data streaming pipeline to feed AI models with continuously updated data sources.",
+    category: "infrastructure",
+    image:
+      "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&q=80",
+    securityDetails:
+      "The streaming pipeline was secured with:\\n\\n- Encrypted data streams\\n- Authenticated producers and consumers\\n- Access control per data topic\\n- Audit logging for data access\\n- Network isolation",
+    cicdDetails:
+      "Pipeline automation included:\\n\\n- Automated connector deployment\\n- Schema evolution handling\\n- Performance monitoring\\n- Fault-tolerant rollout strategies",
+    technologies: [
+      "Streaming",
+      "CDC",
+      "Real-time Data",
+      "Docker",
+      "Monitoring",
+    ],
+  },
+  {
+    id: "7",
+    title: "Private AI Collaboration & Storage Platform",
+    description:
+      "Deployed a secure private collaboration platform for AI datasets, model outputs, and research assets.",
+    category: "infrastructure",
+    image: "/images/nc.jpg",
+    securityDetails:
+      "Security features included:\\n\\n- Encrypted data storage\\n- Identity-based access control\\n- MFA enforcement\\n- Secure sharing policies\\n- Audit logging",
+    cicdDetails:
+      "Deployment automation included:\\n\\n- Automated installation and upgrades\\n- Backup and restore workflows\\n- Performance monitoring\\n- Disaster recovery testing",
+    technologies: [
+      "Private Cloud",
+      "Object Storage",
+      "Encryption",
+      "Docker",
+      "LDAP",
+    ],
+  },
+  {
+    id: "8",
+    title: "AI Workflow Automation Platform",
+    description:
+      "Built workflow automation for AI operations, security alerts, and deployment pipelines.",
+    category: "ci/cd",
+    image: "/images/n8n.png",
+    securityDetails:
+      "Automation security included:\\n\\n- Secure credential handling\\n- OAuth-based integrations\\n- Role-based workflow access\\n- Audit logs for executions",
+    cicdDetails:
+      "Workflows automated:\\n\\n- AI deployment triggers\\n- Incident response actions\\n- Monitoring alerts\\n- Infrastructure provisioning",
+    technologies: [
+      "Automation",
+      "Workflows",
+      "CI/CD",
+      "OAuth 2.0",
+      "APIs",
+    ],
+  },
+  {
+    id: "9",
+    title: "AI Observability & Performance Monitoring",
+    description:
+      "Implemented observability for AI inference services, tracking latency, errors, and resource usage.",
+    category: "infrastructure",
+    image: "/images/otel.png",
+    securityDetails:
+      "Observability security included:\\n\\n- Encrypted telemetry data\\n- Authenticated collectors\\n- Sensitive data filtering\\n- Access controls for metrics",
+    cicdDetails:
+      "The observability pipeline automated:\\n\\n- Instrumentation deployment\\n- Dashboard provisioning\\n- Alerting rules\\n- Performance baselines",
+    technologies: [
+      "Metrics",
+      "Tracing",
+      "Logging",
+      "Monitoring",
+      "Kubernetes",
+    ],
+  },
+  {
+    id: "10",
+    title: "Secure AI Kubernetes Platform",
+    description:
+      "Hardened Kubernetes clusters hosting AI workloads with strict isolation and security controls.",
+    category: "security",
+    image: "/images/k8s.png",
+    securityDetails:
+      "Security hardening included:\\n\\n- RBAC and least privilege\\n- Network policies\\n- Secure secret handling\\n- Runtime protection",
+    cicdDetails:
+      "CI/CD pipelines enforced:\\n\\n- Image scanning\\n- Policy validation\\n- Secure deployments",
+    technologies: [
+      "Kubernetes",
+      "RBAC",
+      "Network Policies",
+      "Security Contexts",
+    ],
+  },
+  {
+    id: "11",
+    title: "Zero-Trust AI Deployment Pipeline",
+    description:
+      "Designed a zero-trust CI/CD pipeline for AI model builds and deployments.",
+    category: "ci/cd",
+    image:
+      "https://www.brickworkindia.com/AdminFiles/What-is-Zero-Trust-Architecture-_1.jpg",
+    securityDetails:
+      "Zero-trust principles included:\\n\\n- Strong identity verification\\n- Signed artifacts\\n- Least privilege access\\n- Full audit trails",
+    cicdDetails:
+      "Pipeline features:\\n\\n- Secure build isolation\\n- Automated security checks\\n- Approval gates",
+    technologies: [
+      "Zero Trust",
+      "CI/CD",
+      "Policy as Code",
+      "Artifact Signing",
+    ],
+  },
+  {
+    id: "12",
+    title: "AI Infrastructure as Code Security",
+    description:
+      "Secured AI infrastructure provisioning using policy-driven Infrastructure as Code.",
+    category: "infrastructure",
+    image:
+      "https://images.unsplash.com/photo-1607799279861-4dd421887fb3?w=800&q=80",
+    securityDetails:
+      "IaC security included:\\n\\n- Policy enforcement\\n- Drift detection\\n- Secure defaults",
+    cicdDetails:
+      "The pipeline automated:\\n\\n- Validation and approval\\n- Secure provisioning\\n- Compliance checks",
+    technologies: [
+      "IaC",
+      "Policy as Code",
+      "Automation",
+      "GitOps",
+    ],
+  },
+  {
+    id: "13",
+    title: "AI Container Security Platform",
+    description:
+      "Implemented container security controls for AI workloads from build to runtime.",
+    category: "infrastructure",
+    image:
+      "https://images.unsplash.com/photo-1605745341112-85968b19335b?w=800&q=80",
+    securityDetails:
+      "Security controls included:\\n\\n- Image scanning\\n- Runtime protection\\n- Policy enforcement",
+    cicdDetails:
+      "CI/CD integration included:\\n\\n- Security gates\\n- Signed images\\n- Deployment validation",
+    technologies: [
+      "Containers",
+      "Runtime Security",
+      "CI/CD",
+      "Policy Enforcement",
+    ],
+  },
+  {
+    id: "14",
+    title: "Automated AI Compliance Pipeline",
+    description:
+      "Automated compliance validation for AI infrastructure and services.",
+    category: "ci/cd",
+    image:
+      "https://images.unsplash.com/photo-1633412802994-5c058f151b66?w=800&q=80",
+    securityDetails:
+      "Compliance automation included:\\n\\n- Policy validation\\n- Evidence collection\\n- Audit trails",
+    cicdDetails:
+      "Pipeline automation included:\\n\\n- Continuous compliance checks\\n- Reporting dashboards",
+    technologies: [
+      "Compliance as Code",
+      "Automation",
+      "Policy",
+    ],
+  },
+  {
+    id: "15",
+    title: "AI Cloud Security Posture Management",
+    description:
+      "Implemented security posture management for AI workloads across cloud environments.",
+    category: "infrastructure",
+    image:
+      "https://images.unsplash.com/photo-1544197150-b99a580bb7a8?w=800&q=80",
+    securityDetails:
+      "The CSPM solution provided:\\n\\n- Continuous posture assessment\\n- Automated remediation\\n- Risk prioritization",
+    cicdDetails:
+      "Implementation included:\\n\\n- Automated deployment\\n- Continuous validation",
+    technologies: [
+      "Cloud Security",
+      "Posture Management",
+      "Automation",
+    ],
+  },
+  {
+    id: "16",
+    title: "AI Self-Hosted Model Deployment Platform",
+    description:
+      "Designed and deployed a secure, scalable platform for hosting self-trained AI/ML models with controlled access and observability.",
+    category: "infrastructure",
+    image: "/images/ai-host.png",
+    securityDetails:
+      "The AI platform security included:\\n\\n- OAuth 2.0 / OIDC authentication\\n- Role-based access to inference APIs\\n- TLS encryption\\n- Secure model artifact storage\\n- Audit logging",
+    cicdDetails:
+      "The deployment pipeline automated:\\n\\n- Model containerization\\n- CI/CD-based rollouts\\n- Zero-downtime updates\\n- Monitoring and rollback",
+    technologies: [
+      "Kubernetes",
+      "Docker",
+      "Keycloak",
+      "MinIO",
+      "MLOps",
+      "Monitoring",
+    ],
+  },
+];
+
+
+export default ProjectShowcase;

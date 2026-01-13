@@ -40,7 +40,7 @@ const ExperienceTimeline = ({
       title: "Associate Cybersecurity Engineer",
       organization: "Business Automation (High Tech Park, Rajshahi)",
       startDate: "2023",
-      endDate: "2025",
+      endDate: "2024",
       description:
         "Leading high-impact national, government and international projects security and infrastructure management. Conducting VAPT on BD Government projects including Hajj, Mutation/Land, BIDA, SDG. Managing SOC operations, threat intelligence, and collaborating with HPE team for international deployments. Maintaining high-traffic load balancers (millions/day), cloud architecture, and implementing DevSecOps practices with CI/CD pipeline management.",
       skills: [
@@ -53,10 +53,10 @@ const ExperienceTimeline = ({
       id: "2",
       title: "Associate DevSecOps Engineer",
       organization: "Business Automation (High Tech Park, Rajshahi)",
-      startDate: "2022-01",
-      endDate: "2022-12",
+      startDate: "2024",
+      endDate: "-",
       description:
-        "Gained hands-on experience in web application security testing and vulnerability assessment. Participated in bug bounty programs and achieved certification in Cybersecurity Ethical Hacking. Developed foundational skills in penetration testing methodologies and security tools.",
+        "Experience in designing, securing, and operating scalable cloud-native infrastructure. I specialize in Kubernetes-based deployments, CI/CD automation,AWS and embedding security across the entire software delivery lifecycle. I have contributed to national-level digital platforms of Bangladesh, including the Land Mutation System, Bangladesh Business Portal (BBP), and e-Hajj, supporting high availability, secure identity management, and large-scale user access. I have deep hands-on expertise in Keycloak for centralized authentication, authorization, SSO, OAuth2/OpenID Connect, and RBAC, as well as MinIO for secure, high-performance object storage with policy-based access and integration with identity providers. My experience also includes managing reverse proxies and load balancers (Nginx, HAProxy), implementing monitoring with Grafana and Prometheus, enforcing TLS and secrets management, and working closely with development teams to deliver secure, reliable, production-ready systems",
       skills: ["Auth2.0(kekycloak)", "MLOps", "Minio S3 storage", "Sonarqube", "Cloud Security", "SBOM", "container security", "SSL/TLS", "API Security", "Security Compliance", "Deployment Automation"],
       expanded: false,
     },

@@ -141,7 +141,7 @@ const SkillsVisualization = () => {
       skills: [
         {
           name: "Nginx",
-          proficiency: 90,
+          proficiency: 98,
           description: "Web server and reverse proxy",
         },
         {
@@ -161,7 +161,7 @@ const SkillsVisualization = () => {
         },
         {
           name: "Kubernetes",
-          proficiency: 85,
+          proficiency: 95,
           description: "Container orchestration at scale",
         },
         {
