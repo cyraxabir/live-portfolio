@@ -204,6 +204,197 @@ const Home = () => {
         </div>
       </section>
 
+      {/* Work Experience Section */}
+      <section id="work-experience" className="py-20 px-4 bg-gray-900">
+        <div className="container mx-auto max-w-4xl">
+          <div className="text-center mb-12">
+            <h2 className="text-4xl font-bold mb-2">
+              Work <span className="text-green-500">Experience</span>
+            </h2>
+            <p className="text-gray-400">
+              My journey in DevSecOps, building secure and automated infrastructure
+            </p>
+          </div>
+
+          <div className="relative">
+            {/* Timeline line */}
+            <div className="absolute left-8 top-0 bottom-0 w-0.5 bg-gradient-to-b from-green-500/50 to-transparent"></div>
+
+            {/* Experience Items */}
+            <div className="space-y-8">
+              {/* Item 1 */}
+              <motion.div
+                initial={{ opacity: 0, x: -20 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.5 }}
+                viewport={{ once: true }}
+                className="relative pl-24"
+              >
+                <div className="absolute left-1 top-2 w-16 h-16 bg-blue-500/20 rounded-full border-2 border-blue-500 flex items-center justify-center">
+                  <div className="w-4 h-4 bg-blue-500 rounded-full"></div>
+                </div>
+            <Card className="bg-black/50 border border-green-500/20 hover:border-green-500/50 transition-all">
+                  <CardContent className="p-6">
+                    <div className="flex justify-between items-start mb-2">
+                      <h3 className="text-2xl font-bold text-white">
+                        Senior DevSecOps Engineer
+                      </h3>
+                      <span className="text-green-500 text-sm font-medium">
+                        Jan 2023 - Present
+                      </span>
+                    </div>
+                    <p className="text-green-400 font-medium mb-3">
+                      TechCorp Inc.
+                    </p>
+                    <p className="text-gray-300 mb-4">
+                      Leading security automation and CI/CD pipeline optimization for microservices architecture.
+                    </p>
+                    <ul className="space-y-2 mb-4">
+                      <li className="flex items-start gap-3 text-gray-300">
+                        <span className="text-green-500 mt-1">✓</span>
+                        <span>Reduced deployment time by 60% with automated CI/CD pipelines</span>
+                      </li>
+                      <li className="flex items-start gap-3 text-gray-300">
+                        <span className="text-green-500 mt-1">✓</span>
+                        <span>Implemented SAST/DAST scanning reducing vulnerabilities by 85%</span>
+                      </li>
+                      <li className="flex items-start gap-3 text-gray-300">
+                        <span className="text-green-500 mt-1">✓</span>
+                        <span>Managed Kubernetes clusters serving 10M+ daily requests</span>
+                      </li>
+                      <li className="flex items-start gap-3 text-gray-300">
+                        <span className="text-green-500 mt-1">✓</span>
+                        <span>Established Infrastructure as Code practices with Terraform</span>
+                      </li>
+                    </ul>
+                    <div className="flex flex-wrap gap-2">
+                      {["Kubernetes", "Terraform", "Jenkins", "SonarQube", "AWS", "Docker"].map((tech) => (
+                        <span
+                          key={tech}
+                          className="px-3 py-1 bg-green-500/10 border border-green-500/30 text-green-400 text-xs rounded-full"
+                        >
+                          {tech}
+                        </span>
+                      ))}
+                    </div>
+                  </CardContent>
+                </Card>
+              </motion.div>
+
+              {/* Item 2 */}
+              <motion.div
+                initial={{ opacity: 0, x: -20 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.5, delay: 0.1 }}
+                viewport={{ once: true }}
+                className="relative pl-24"
+              >
+                <div className="absolute left-1 top-2 w-16 h-16 bg-blue-500/20 rounded-full border-2 border-blue-500 flex items-center justify-center">
+                  <div className="w-4 h-4 bg-blue-500 rounded-full"></div>
+                </div>
+                <Card className="bg-black/50 border border-green-500/20 hover:border-green-500/50 transition-all">
+                  <CardContent className="p-6">
+                    <div className="flex justify-between items-start mb-2">
+                      <h3 className="text-2xl font-bold text-white">
+                        DevOps Engineer
+                      </h3>
+                      <span className="text-green-500 text-sm font-medium">
+                        Jun 2021 - Dec 2022
+                      </span>
+                    </div>
+                    <p className="text-green-400 font-medium mb-3">
+                      CloudScale Solutions
+                    </p>
+                    <p className="text-gray-300 mb-4">
+                      Designed and maintained cloud infrastructure and deployment automation.
+                    </p>
+                    <ul className="space-y-2 mb-4">
+                      <li className="flex items-start gap-3 text-gray-300">
+                        <span className="text-green-500 mt-1">✓</span>
+                        <span>Migrated legacy applications to AWS reducing costs by 40%</span>
+                      </li>
+                      <li className="flex items-start gap-3 text-gray-300">
+                        <span className="text-green-500 mt-1">✓</span>
+                        <span>Built automated testing pipelines with 95% code coverage</span>
+                      </li>
+                      <li className="flex items-start gap-3 text-gray-300">
+                        <span className="text-green-500 mt-1">✓</span>
+                        <span>Implemented monitoring with Prometheus and Grafana</span>
+                      </li>
+                      <li className="flex items-start gap-3 text-gray-300">
+                        <span className="text-green-500 mt-1">✓</span>
+                        <span>Containerized 20+ applications using Docker</span>
+                      </li>
+                    </ul>
+                    <div className="flex flex-wrap gap-2">
+                      {["AWS", "Docker", "Jenkins", "Ansible", "Python", "Prometheus"].map((tech) => (
+                        <span
+                          key={tech}
+                          className="px-3 py-1 bg-green-500/10 border border-green-500/30 text-green-400 text-xs rounded-full"
+                        >
+                          {tech}
+                        </span>
+                      ))}
+                    </div>
+                  </CardContent>
+                </Card>
+              </motion.div>
+
+              {/* Item 3 */}
+              <motion.div
+                initial={{ opacity: 0, x: -20 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.5, delay: 0.2 }}
+                viewport={{ once: true }}
+                className="relative pl-24"
+              >
+                <div className="absolute left-1 top-2 w-16 h-16 bg-blue-500/20 rounded-full border-2 border-blue-500 flex items-center justify-center">
+                  <div className="w-4 h-4 bg-blue-500 rounded-full"></div>
+                </div>
+                <Card className="bg-black/50 border border-green-500/20 hover:border-green-500/50 transition-all">
+                  <CardContent className="p-6">
+                    <div className="flex justify-between items-start mb-2">
+                      <h3 className="text-2xl font-bold text-white">
+                        Junior DevOps Engineer
+                      </h3>
+                      <span className="text-green-500 text-sm font-medium">
+                        Jan 2020 - May 2021
+                      </span>
+                    </div>
+                    <p className="text-green-400 font-medium mb-3">
+                      StartUp Labs
+                    </p>
+                    <p className="text-gray-300 mb-4">
+                      Supported development teams with deployment automation and infrastructure management.
+                    </p>
+                    <ul className="space-y-2 mb-4">
+                      <li className="flex items-start gap-3 text-gray-300">
+                        <span className="text-green-500 mt-1">✓</span>
+                        <span>Automated manual deployment processes saving 20 hours/week</span>
+                      </li>
+                      <li className="flex items-start gap-3 text-gray-300">
+                        <span className="text-green-500 mt-1">✓</span>
+                        <span>Set up CI/CD pipelines for 10+ microservices</span>
+                      </li>
+                    </ul>
+                    <div className="flex flex-wrap gap-2">
+                      {["Linux", "Git", "Jenkins", "Shell Scripting", "AWS", "Nginx"].map((tech) => (
+                        <span
+                          key={tech}
+                          className="px-3 py-1 bg-green-500/10 border border-green-500/30 text-green-400 text-xs rounded-full"
+                        >
+                          {tech}
+                        </span>
+                      ))}
+                    </div>
+                  </CardContent>
+                </Card>
+              </motion.div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Experience Timeline Section */}
       <section id="experience" className="py-20 px-4 bg-black">
         <div className="container mx-auto">
