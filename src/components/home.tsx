@@ -6,6 +6,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import ExperienceTimeline from "./ExperienceTimeline";
 import ProjectShowcase from "./ProjectShowcase";
 import SkillsVisualization from "./SkillsVisualization";
+import SkillsAndCertifications from "./SkillsAndCertifications";
 import AIChatbot from "./AIChatbot";
 
 const Home = () => {
@@ -244,7 +245,7 @@ const Home = () => {
                       </span>
                     </div>
                     <p className="text-green-400 font-medium mb-3">
-                      TechCorp Inc.
+                      Business Automation Ltd.
                     </p>
                     <p className="text-gray-300 mb-4">
                       Leading security automation and CI/CD pipeline optimization for microservices architecture.
@@ -415,6 +416,9 @@ const Home = () => {
           <ProjectShowcase />
         </div>
       </section>
+
+      {/* Skills and Certifications Section */}
+      <SkillsAndCertifications />
 
       {/* Skills Visualization Section */}
       <section id="skills" className="py-20 px-4 bg-black">

@@ -53,7 +53,7 @@ const ProjectShowcase = ({
   };
 
   return (
-    <div className="w-full py-12 bg-background">
+    <div className="w-full py-12 bg-black">
       <div className="container mx-auto px-4">
         <div className="flex flex-col items-center mb-12">
           <h2 className="text-3xl font-bold mb-4 text-foreground">Projects</h2>
